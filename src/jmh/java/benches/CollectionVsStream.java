@@ -27,7 +27,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 @Measurement(iterations = 8)
 public class CollectionVsStream {
 
-  public static final int N = 1000;
+  public static final int N = 10_000;
 
   private final static Random random = new Random();
   private final static List<HierarchyElement> hierarchyElements = buildHierarchyElements();
@@ -44,7 +44,7 @@ public class CollectionVsStream {
 
   private static List<HierarchyElement> buildHierarchyElements() {
     List<HierarchyElement> ret = new ArrayList<>();
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10_000; i++) {
       ret.add(randomHierarchyElement());
     }
     return ret;
